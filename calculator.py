@@ -1,7 +1,7 @@
 """CLI application for a prefix-notation calculator."""
 
 from arithmetic import (add, subtract, multiply, divide, square, cube,
-                        power, mod, )
+                        power, mod, add_mult, add_cubes)
 
 def calculate ():
     """ Prints out an answer for the given equation """
@@ -41,8 +41,15 @@ def calculate ():
             elif tokens[0] == 'mod':
                 print(f'{mod(float(tokens[1]), float(tokens[2]))}')
             
+            elif tokens[0] == 'add_mult':
+                print(f'{add_mult(float(tokens[1]), float(tokens[2]), float(tokens[3]))}')
+
+            elif tokens[0] == 'add_cubes':
+                print(f'{add_cubes(float(tokens[1]), float(tokens[2]))}')
+            
             else:
                 print('Oh no! Please enter a correct input.')
+                
         except:
                 print('Please enter the correct number of commands.')
 
